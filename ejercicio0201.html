@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de mal uso semántico</title>
+    <meta name="description" content="Documento HTML funcional pero con usos semánticos incorrectos de sus elementos.">
+    <link rel="icon" href="/favicon.png" type="image/png">
+</head>
+
+<body>
+
+    <footer>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#articulos">Artículos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </footer>
+
+    <nav>
+        <a href="#detalle-poco-relevante">Ver detalle sin importancia</a>
+    </nav>
+
+    <aside>
+        <h1>Bienvenidos a nuestra web</h1>
+        <p>Este es, en realidad, el contenido más importante de toda la página,
+            pero lo hemos colocado dentro de un &lt;aside&gt;, que según los
+            apuntes debería usarse solo para información tangencial.</p>
+    </aside>
+
+    <main>
+        <p>Primer bloque "principal" del documento.</p>
+    </main>
+
+    <main>
+
+        <h1>Segundo "contenido principal"</h1>
+        <h4>Subapartado que salta directamente a nivel 4, sin pasar por h2 ni h3</h4>
+
+        <section>
+            <p>Este bloque no tiene ningún título ni unidad temática propia,
+                solo se usa para aplicar un estilo visual.</p>
+        </section>
+
+        <article>
+            Esto es solo un recuadro decorativo, no una noticia,
+            entrada de blog ni publicación independiente.
+        </article>
+
+        <div>
+            <h2>Mi entrada de blog</h2>
+            <p>Publicado el 2 de septiembre de 2026. Este contenido sí sería
+                independiente y reutilizable, pero se ha envuelto en un
+                &lt;div&gt; genérico en vez de en &lt;article&gt;.</p>
+        </div>
+
+        <dl>
+            <dt>Este texto no es ningún término que se esté definiendo.</dt>
+            <dd>Y este tampoco es la descripción de nada en concreto, es solo
+                otra frase cualquiera metida dentro de dd.</dd>
+        </dl>
+
+        <h3>Subtítulo que aparece antes que su propio h2</h3>
+        <h1>Otro h1 más, cuando ya había dos en la página</h1>
+        <h6>Salto directo de h1 a h6, sin pasar por ningún nivel intermedio</h6>
+        <h5>Y este h5 aparece después del h6, invirtiendo el orden jerárquico</h5>
+
+        <dl>
+            <ol>
+                <li><a href="#a">Sección A</a></li>
+                <li><a href="#b">Sección B</a></li>
+                <li><a href="#c">Sección C</a></li>
+            </ol>
+        </dl>
+
+        <pre>
+Este es un párrafo de texto normal, sin ningún código ni formato especial
+que requiera conservar los espacios y saltos de línea tal cual, pero se ha
+metido dentro de un elemento pre por error.
+        </pre>
+
+        <address>
+            Tienda de informática "El Byte Feliz" — Calle Mayor, 15, Sevilla
+        </address>
+
+        <blockquote>
+            Instrucciones de uso: pulse el botón verde para encender el
+            dispositivo. Esto no es ninguna cita, solo texto propio.
+        </blockquote>
+
+        <details>
+            <p>Este párrafo aparece antes del summary, lo cual no es correcto.</p>
+            <summary>Resumen que debería ir primero</summary>
+        </details>
+
+        <figure>
+            <img src="https://via.placeholder.com/150" alt="Imagen decorativa sin relación con el texto">
+            <figcaption>Figura suelta que nadie menciona en el texto.</figcaption>
+        </figure>
+
+        <p>Seguimos hablando exactamente del mismo tema.</p>
+        <hr>
+        <p>Y aquí seguimos, sin que haya cambiado nada en absoluto.</p>
+
+        <dialog open>
+            Este texto se muestra siempre como si fuera parte normal del
+            contenido, usando un dialog que nunca se cierra ni representa
+            una acción puntual del usuario.
+        </dialog>
+
+    </main>
+
+    <header>
+        <p>&copy; 2026 Todos los derechos reservados</p>
+    </header>
+
+</body>
+
+</html>
